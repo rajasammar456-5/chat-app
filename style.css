@@ -1,1 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
+body{
+    background:#ece5dd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+}
+
+.login-box,
+.chat-box{
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    overflow:hidden;
+}
+
+.login-box{
+    padding:30px;
+    text-align:center;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+    color:#128C7E;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    background:#128C7E;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.top{
+    background:#128C7E;
+    color:white;
+    padding:15px;
+}
+
+.search{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.search input{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+.search button{
+    background:white;
+    color:#128C7E;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#chatArea{
+    height:400px;
+    overflow-y:auto;
+    background:#ece5dd;
+    padding:15px;
+}
+
+#messages{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.message{
+    max-width:75%;
+    padding:10px;
+    border-radius:10px;
+    word-wrap:break-word;
+}
+
+.me{
+    background:#DCF8C6;
+    align-self:flex-end;
+}
+
+.friend{
+    background:white;
+    align-self:flex-start;
+}
+
+.bottom{
+    display:flex;
+    gap:10px;
+    padding:15px;
+    background:#f5f5f5;
+}
+
+.bottom input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.bottom button{
+    background:#128C7E;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
