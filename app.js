@@ -175,5 +175,55 @@ function loadMessages(chatId) {
   });
 }
 
+// =======================
+// ENTER KEY TO SEND MESSAGE
+// =======================
+messageInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    sendBtn.click();
+  }
+});
+
+
+// =======================
+// AUTO SCROLL CHAT
+// =======================
+function scrollToBottom() {
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+
+// =======================
+// UPDATED REALTIME LISTENER (WITH SCROLL FIX)
+// =======================
+function loadMessages(chatId) {
+  const q = query(
+    collection(db, "chats", chatId, "messages"),
+    orderBy("createdAt")
+  );
+
+  onSnapshot(q, (snapshot) => {
+    messagesDiv.innerHTML = "";
+
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+
+      const div = document.createElement("div");
+      div.classList.add("message");
+
+      if (data.sender === currentUser.uid) {
+        div.classList.add("me");
+      } else {
+        div.classList.add("friend");
+      }
+
+      div.innerText = data.text;
+
+      messagesDiv.appendChild(div);
+    });
+
+    scrollToBottom();
+  });
+}
 const messageInput = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
